@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A8BBE03A-D2AF-496D-B9A9-C6B73F90A7D8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VideoStore.Core</RootNamespace>
+    <AssemblyName>VideoStore.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Interfaces\IVideoStoreContext.cs" />
+    <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\AddressType.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\FilmContributor.cs" />
+    <Compile Include="Models\FilmContributorType.cs" />
+    <Compile Include="Models\FormatType.cs" />
+    <Compile Include="Models\InventoryItem.cs" />
+    <Compile Include="Models\InventoryItemFilmContributor.cs" />
+    <Compile Include="Models\InventoryItemFormatType.cs" />
+    <Compile Include="Models\FileStore.cs" />
+    <Compile Include="Models\InventoryItemFileStore.cs" />
+    <Compile Include="Models\InventoryItemItemType.cs" />
+    <Compile Include="Models\InventoryItemPurchaseType.cs" />
+    <Compile Include="Models\InventoryItemRating.cs" />
+    <Compile Include="Models\InventoryItemReview.cs" />
+    <Compile Include="Models\InventoryItemTag.cs" />
+    <Compile Include="Models\ItemType.cs" />
+    <Compile Include="Models\ModelMaps\AddressMap.cs" />
+    <Compile Include="Models\ModelMaps\AddressTypeMap.cs" />
+    <Compile Include="Models\ModelMaps\CustomerMap.cs" />
+    <Compile Include="Models\ModelMaps\EntityBaseMap.cs" />
+    <Compile Include="Models\ModelMaps\FileStoreMap.cs" />
+    <Compile Include="Models\ModelMaps\FilmContributorMap.cs" />
+    <Compile Include="Models\ModelMaps\FilmContributorTypeMap.cs" />
+    <Compile Include="Models\ModelMaps\FormatTypeMap.cs" />
+    <Compile Include="Models\ModelMaps\InventoryItemFileStoreMap.cs" />
+    <Compile Include="Models\ModelMaps\InventoryItemFilmContributorMap.cs" />
+    <Compile Include="Models\ModelMaps\InventoryItemFormatTypeMap.cs" />
+    <Compile Include="Models\ModelMaps\InventoryItemItemTypeMap.cs" />
+    <Compile Include="Models\ModelMaps\InventoryItemMap.cs" />
+    <Compile Include="Models\ModelMaps\InventoryItemPurchaseTypeMap.cs" />
+    <Compile Include="Models\ModelMaps\InventoryItemRatingMap.cs" />
+    <Compile Include="Models\ModelMaps\InventoryItemReviewMap.cs" />
+    <Compile Include="Models\ModelMaps\InventoryItemTagMap.cs" />
+    <Compile Include="Models\ModelMaps\ItemTypeMap.cs" />
+    <Compile Include="Models\ModelMaps\PaymentInformationMap.cs" />
+    <Compile Include="Models\ModelMaps\PurchaseTypeMap.cs" />
+    <Compile Include="Models\ModelMaps\RelatedItemMap.cs" />
+    <Compile Include="Models\ModelMaps\RentalHistoryMap.cs" />
+    <Compile Include="Models\PaymentInformation.cs" />
+    <Compile Include="Models\PurchaseType.cs" />
+    <Compile Include="Models\RelatedItem.cs" />
+    <Compile Include="Models\RentalHistory.cs" />
+    <Compile Include="Models\VideoStoreContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VideoStore.Common\VideoStore.Common.csproj">
+      <Project>{D2EB8784-8447-451D-BD8F-16425B0DBB68}</Project>
+      <Name>VideoStore.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repositories\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
