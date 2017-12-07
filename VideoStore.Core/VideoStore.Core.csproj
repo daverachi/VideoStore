@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IInventoryItemRepository.cs" />
     <Compile Include="Interfaces\IVideoStoreContext.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\AddressType.cs" />
@@ -93,6 +94,47 @@
     <Compile Include="Models\RentalHistory.cs" />
     <Compile Include="Models\VideoStoreContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AddressRepository.cs" />
+    <Compile Include="Repositories\AddressTypeRepository.cs" />
+    <Compile Include="Repositories\CustomerRepository.cs" />
+    <Compile Include="Repositories\FileStoreRepository.cs" />
+    <Compile Include="Repositories\FilmContributorRepository.cs" />
+    <Compile Include="Repositories\FilmContributorTypeRepository.cs" />
+    <Compile Include="Repositories\FormatTypeRepository.cs" />
+    <Compile Include="Interfaces\IAddressRepository.cs" />
+    <Compile Include="Interfaces\IAddressTypeRepository.cs" />
+    <Compile Include="Interfaces\ICustomerRepository.cs" />
+    <Compile Include="Interfaces\IFileStoreRepository.cs" />
+    <Compile Include="Interfaces\IFilmContributorRepository.cs" />
+    <Compile Include="Interfaces\IFilmContributorTypeRepository.cs" />
+    <Compile Include="Interfaces\IFormatTypeRepository.cs" />
+    <Compile Include="Interfaces\IInventoryItemFileStoreRepository.cs" />
+    <Compile Include="Interfaces\IInventoryItemFilmContributorRepository.cs" />
+    <Compile Include="Interfaces\IInventoryItemFormatTypeRepository.cs" />
+    <Compile Include="Interfaces\IInventoryItemItemTypeRepository.cs" />
+    <Compile Include="Interfaces\IInventoryItemPurchaseTypeRepository.cs" />
+    <Compile Include="Interfaces\IInventoryItemRatingRepository.cs" />
+    <Compile Include="Interfaces\IInventoryItemReviewRepository.cs" />
+    <Compile Include="Interfaces\IInventoryItemTagRepository.cs" />
+    <Compile Include="Interfaces\IItemTypeRepository.cs" />
+    <Compile Include="Repositories\InventoryItemFileStoreRepository.cs" />
+    <Compile Include="Repositories\InventoryItemFilmContributorRepository.cs" />
+    <Compile Include="Repositories\InventoryItemFormatTypeRepository.cs" />
+    <Compile Include="Repositories\InventoryItemItemTypeRepository.cs" />
+    <Compile Include="Repositories\InventoryItemPurchaseTypeRepository.cs" />
+    <Compile Include="Repositories\InventoryItemRatingRepository.cs" />
+    <Compile Include="Repositories\InventoryItemRepository.cs" />
+    <Compile Include="Repositories\InventoryItemReviewRepository.cs" />
+    <Compile Include="Repositories\InventoryItemTagRepository.cs" />
+    <Compile Include="Interfaces\IPaymentInformationRepository.cs" />
+    <Compile Include="Interfaces\IPurchaseTypeRepository.cs" />
+    <Compile Include="Interfaces\IRelatedItemRepository.cs" />
+    <Compile Include="Interfaces\IRentalHistoryRepository.cs" />
+    <Compile Include="Repositories\ItemTypeRepository.cs" />
+    <Compile Include="Repositories\PaymentInformationRepository.cs" />
+    <Compile Include="Repositories\PurchaseTypeRepository.cs" />
+    <Compile Include="Repositories\RelatedItemRepository.cs" />
+    <Compile Include="Repositories\RentalHistoryRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VideoStore.Common\VideoStore.Common.csproj">
@@ -105,7 +147,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Repositories\" />
     <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

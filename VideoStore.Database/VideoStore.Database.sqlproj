@@ -84,4 +84,7 @@
     <Build Include="Tables\RelatedItem.sql" />
     <Build Include="Tables\Customer_Address.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="SchemaCompare\LocalSchemaCompare.scmp" />
+  </ItemGroup>
 </Project>
