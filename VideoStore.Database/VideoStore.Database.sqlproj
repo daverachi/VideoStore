@@ -84,6 +84,7 @@
     <Build Include="Tables\InventoryItem_Rating.sql" />
     <Build Include="Tables\RelatedItem.sql" />
     <Build Include="Tables\Customer_Address.sql" />
+    <Build Include="Tables\State.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="SchemaCompare\LocalSchemaCompare.scmp" />
