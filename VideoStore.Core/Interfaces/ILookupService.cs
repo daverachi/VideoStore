@@ -3,8 +3,8 @@ using VideoStore.Core.Models;
 
 namespace VideoStore.Core.Interfaces
 {
-    public interface IInventoryItemRepository
+    public interface ILookupService
     {
-        IEnumerable<InventoryItem> Get();
+        IEnumerable<InventoryItem> GetInventory();
     }
 }

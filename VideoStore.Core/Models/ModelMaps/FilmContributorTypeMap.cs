@@ -1,6 +1,6 @@
 ﻿namespace VideoStore.Core.Models.ModelMaps
 {
-    public class FilmContributorTypeMap : EntityBaseMap<AddressType>
+    public class FilmContributorTypeMap : EntityBaseMap<FilmContributorType>
     {
         public FilmContributorTypeMap()
         {

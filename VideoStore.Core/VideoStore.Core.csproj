@@ -47,7 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IAdminService.cs" />
     <Compile Include="Interfaces\IInventoryItemRepository.cs" />
+    <Compile Include="Interfaces\ILookupService.cs" />
     <Compile Include="Interfaces\IVideoStoreContext.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\AddressType.cs" />
@@ -135,6 +137,9 @@
     <Compile Include="Repositories\PurchaseTypeRepository.cs" />
     <Compile Include="Repositories\RelatedItemRepository.cs" />
     <Compile Include="Repositories\RentalHistoryRepository.cs" />
+    <Compile Include="Repositories\UnitOfWork.cs" />
+    <Compile Include="Services\AdminService.cs" />
+    <Compile Include="Services\LookupService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VideoStore.Common\VideoStore.Common.csproj">
@@ -146,8 +151,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

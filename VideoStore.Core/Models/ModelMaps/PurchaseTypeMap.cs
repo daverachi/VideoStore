@@ -4,7 +4,7 @@
     {
         public PurchaseTypeMap()
         {
-            this.ToTable("ItemType");
+            this.ToTable("PurchaseType");
             this.Property(t => t.TypeName).HasColumnName("TypeName");
         }
     }
