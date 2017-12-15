@@ -299,27 +299,17 @@ MERGE INTO
 WITH (HOLDLOCK) AS target
 USING (VALUES
 	(1, 'AvengersInfinityWar_Large.jpg', 1, GETDATE()),
-	(2, 'AvengersInfinityWar_Small.jpg', 1, GETDATE()),
-	(3, 'Coco_Small.jpg', 1, GETDATE()),
-	(4, 'Coco_Large.jpg', 1, GETDATE()),
-	(5, 'JusticeLeague_Small.jpg', 1, GETDATE()),
-	(6, 'JusticeLeague_Large.jpg', 1, GETDATE()),
-	(7, 'KingsmanGoldenCircle_Small.jpg', 1, GETDATE()),
-	(8, 'KingsmanGoldenCircle_Large.jpg', 1, GETDATE()),
-	(9, 'LadyBird_Small.jpg', 1, GETDATE()),
-	(10, 'LadyBird_Large.jpg', 1, GETDATE()),
-	(11, 'MurderOnTheOrientExpress_Small.jpg', 1, GETDATE()),
-	(12, 'MurderOnTheOrientExpress_Large.jpg', 1, GETDATE()),
-	(13, 'StarWars_TheLastJedi_Small.jpg', 1, GETDATE()),
-	(14, 'StarWars_TheLastJedi_Large.jpg', 1, GETDATE()),
-	(15, 'Thor_Ragnarok_Small.jpg', 1, GETDATE()),
-	(16, 'Thor_Ragnarok_Large.jpg', 1, GETDATE())
-	--(7, '_Small.jpg', 1, GETDATE()),
-	--(8, '_Large.jpg', 1, GETDATE()),
-	--(9, '_Small.jpg', 1, GETDATE()),
-	--(0, '_Large.jpg', 1, GETDATE()),
-	--(1, '_Small.jpg', 1, GETDATE()),
-	--(2, '_Large.jpg', 1, GETDATE()),
+	(2, 'Coco_Large.jpg', 1, GETDATE()),
+	(3, 'JusticeLeague_Large.jpg', 1, GETDATE()),
+	(4, 'KingsmanGoldenCircle_Large.jpg', 1, GETDATE()),
+	(5, 'LadyBird_Large.jpg', 1, GETDATE()),
+	(6, 'MurderOnTheOrientExpress_Large.jpg', 1, GETDATE()),
+	(7, 'StarWars_TheLastJedi_Large.jpg', 1, GETDATE()),
+	(8, 'Thor_Ragnarok_Large.jpg', 1, GETDATE()),
+	(9, 'Coke_Small.jpg', 1, GETDATE()),
+	(10, 'Twizzlers_Large.jpg', 1, GETDATE()),
+	(11, 'PopularScience_Large.jpg', 1, GETDATE()),
+	(12, 'Good&Plenty_Large.jpg', 1, GETDATE())
 	--(3, '_Small.jpg', 1, GETDATE()),
 	--(4, '_Large.jpg', 1, GETDATE()),
 	--(5, '_Small.jpg', 1, GETDATE()),
@@ -490,6 +480,377 @@ THEN
     INSERT (Id, FirstName, LastName, FilmContributorTypeId,CreateUserId, CreateDate)
     VALUES (source.Id, source.FirstName, source.LastName, Source.FilmContributorTypeId, Source.CreateUserId, Source.CreateDate);
 SET IDENTITY_INSERT [dbo].[FilmContributor] OFF
+GO
+SET NOCOUNT OFF
+GO
+----------------------[[InventoryItem]]-------------------------
+SET NOCOUNT ON
+SET IDENTITY_INSERT [dbo].[InventoryItem] ON
+MERGE INTO 
+	dbo.InventoryItem 
+WITH (HOLDLOCK) AS target
+USING (VALUES
+	(1, 144, 1, GETDATE(),'Avengers: Infinity War', 'The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.'),
+	(2, 152, 1, GETDATE(), 'Star Wars: The Last Jedi','Having taken her first steps into the Jedi world, Rey joins Luke Skywalker on an adventure with Leia, Finn and Poe that unlocks mysteries of the Force and secrets of the past.'),
+	(3, 120, 1, GETDATE(), 'Justice League','Fueled by his restored faith in humanity and inspired by Superman''s selfless act, Bruce Wayne enlists the help of his newfound ally, Diana Prince, to face an even greater enemy. '),
+	(4, 105, 1, GETDATE(), 'Coco','Aspiring musician Miguel, confronted with his family''s ancestral ban on music, enters the Land of the Dead to find his great-great-grandfather, a legendary singer. '),
+	(5, 130, 1, GETDATE(), 'Thor: Ragnarok','Imprisoned, the almighty Thor finds himself in a lethal gladiatorial contest against the Hulk, his former ally. Thor must fight for survival and race against time to prevent the all-powerful Hela from destroying his home and the Asgardian civilization.'),
+	(6, 114, 1, GETDATE(), 'Murder on the Orient Express','When a murder occurs on the train he''s travelling on, celebrated detective Hercule Poirot is recruited to solve the case. '),
+	(7, 94, 1, GETDATE(), 'Lady Bird','In the early 2000s, an artistically-inclined seventeen year-old comes of age in Sacramento, California. '),
+	(8, 141, 1, GETDATE(), 'Kingsman: The Golden Circle','When their headquarters are destroyed and the world is held hostage, the Kingsman''s journey leads them to the discovery of an allied spy organization in the US. These two elite secret organizations must band together to defeat a common enemy. '),
+	(9, NULL, 1, GETDATE(), 'Twizzlers','Strawberry Flavored Licorice Candy, 16 Ounce Bag'),
+	(10, NULL, 1, GETDATE(), 'Good & Plenty','Good & Plenty Theater Box 6 Oz - Licorice Candy With A Hard Candy Shell.'),
+	(11, NULL, 1, GETDATE(), 'Popular Science Magazine','Print Magazine'),
+	(12, NULL, 1, GETDATE(), 'Coca-Cola','Soda, 20 Ounce')
+	--(5, NULL, 1, GETDATE(), '',''),
+	--(6, NULL, 1, GETDATE(), '',''),
+	--(7, NULL, 1, GETDATE(), '',''),
+	--(8, NULL, 1, GETDATE(), '',''),
+	--(9, NULL, 1, GETDATE(), '',''),
+	--(0, NULL, 1, GETDATE(), '',''),
+	--(1, NULL, 1, GETDATE(), '',''),
+	--(2, NULL, 1, GETDATE(), '',''),
+	--(3, NULL, 1, GETDATE(), '',''),
+	--(4, NULL, 1, GETDATE(), '',''),
+	--(5, NULL, 1, GETDATE(), '',''),
+	--(6, NULL, 1, GETDATE(), '',''),
+	--(7, NULL, 1, GETDATE(), '',''),
+	--(8, NULL, 1, GETDATE(), '',''),
+	--(9, NULL, 1, GETDATE(), '',''),
+	--(0, NULL, 1, GETDATE(), '',''),
+	--(1, NULL, 1, GETDATE(), '',''),
+	--(2, NULL, 1, GETDATE(), '',''),
+	--(3, NULL, 1, GETDATE(), '',''),
+	--(4, NULL, 1, GETDATE(), '',''),
+	--(5, NULL, 1, GETDATE(), '',''),
+	--(6, NULL, 1, GETDATE(), '',''),
+	--(7, NULL, 1, GETDATE(), '',''),
+	--(8, NULL, 1, GETDATE(), '',''),
+	--(9, NULL, 1, GETDATE(), '',''),
+	--(0, NULL, 1, GETDATE(), '',''),
+	) AS source ([Id], [Length],[CreateUserId],[CreateDate],[ItemName], [Description])
+    ON target.Id = source.Id
+WHEN MATCHED 
+THEN 
+    UPDATE SET 
+		target.Length = source.Length,
+		target.CreateUserId = source.CreateUserId,
+		target.CreateDate = source.CreateDate,
+		target.ItemName = source.ItemName,
+		target.Description = source.Description
+WHEN NOT MATCHED BY TARGET 
+THEN
+    INSERT (Id, Length, CreateUserId, CreateDate, ItemName, Description)
+    VALUES (source.Id, source.Length, Source.CreateUserId, Source.CreateDate, Source.ItemName, Source.Description);
+SET IDENTITY_INSERT [dbo].[InventoryItem] OFF
+GO
+SET NOCOUNT OFF
+GO
+
+----------------------[[InventoryItem_FileStore]]-------------------------
+SET NOCOUNT ON
+SET IDENTITY_INSERT [dbo].[InventoryItem_FileStore] ON
+MERGE INTO 
+	dbo.InventoryItem_FileStore 
+WITH (HOLDLOCK) AS target
+USING (VALUES
+	(1, 1, 1, 1, GETDATE()),
+	(2, 2, 4, 1, GETDATE()),
+	(3, 3, 3, 1, GETDATE()),
+	(4, 4, 8, 1, GETDATE()),
+	(5, 5, 7, 1, GETDATE()),
+	(6, 6, 6, 1, GETDATE()),
+	(7, 7, 2, 1, GETDATE()),
+	(8, 8, 5, 1, GETDATE()),
+	(9, 9, 12, 1, GETDATE()),
+	(10, 10, 9, 1, GETDATE()),
+	(11, 11, 11, 1, GETDATE()),
+	(12, 12, 10, 1, GETDATE())
+	--(5, 5, 0, 1, GETDATE()),
+	--(6, 6, 6, 1, GETDATE()),
+	--(7, 6, 7, 1, GETDATE()),
+	--(8, 6, 8, 1, GETDATE()),
+	--(9, 6, 9, 1, GETDATE()),
+	--(0, 6, 0, 1, GETDATE()),
+	) AS source ([Id], [FileStoreId], [InventoryItemId], [CreateUserId], [CreateDate])
+    ON target.Id = source.Id
+WHEN MATCHED 
+THEN 
+    UPDATE SET 
+		target.FileStoreId = source.FileStoreId,
+		target.InventoryItemId = source.InventoryItemId,
+		target.CreateUserId = source.CreateUserId,
+		target.CreateDate = source.CreateDate
+WHEN NOT MATCHED BY TARGET 
+THEN
+    INSERT (Id, FileStoreId, InventoryItemId, CreateUserId, CreateDate)
+    VALUES (source.Id, source.FileStoreId, Source.InventoryItemId, Source.CreateUserId, Source.CreateDate);
+SET IDENTITY_INSERT [dbo].[InventoryItem_FileStore] OFF
+GO
+SET NOCOUNT OFF
+GO
+
+----------------------[[InventoryItem_FilmContributor]]-------------------------
+SET NOCOUNT ON
+SET IDENTITY_INSERT [dbo].[InventoryItem_FilmContributor] ON
+MERGE INTO 
+	dbo.InventoryItem_FilmContributor 
+WITH (HOLDLOCK) AS target
+USING (VALUES
+	(1, 1, 1, 1, GETDATE()),
+	(2, 2, 1, 1, GETDATE()),
+	(3, 3, 1, 1, GETDATE()),
+	(4, 4, 1, 1, GETDATE()),
+	(5, 5, 1, 1, GETDATE()),
+	(6, 6, 1, 1, GETDATE()),
+	(7, 7, 1, 1, GETDATE()),
+	(8, 8, 3, 1, GETDATE()),
+	(9, 9, 3, 1, GETDATE()),
+	(10, 10, 3, 1, GETDATE()),
+	(11, 11, 3, 1, GETDATE()),
+	(12, 12, 3, 1, GETDATE()),
+	(13, 13, 3, 1, GETDATE()),
+	(14, 14, 3, 1, GETDATE()),
+	(15, 15, 3, 1, GETDATE()),
+	(16, 16, 4, 1, GETDATE()),
+	(17, 17, 4, 1, GETDATE()),
+	(18, 18, 4, 1, GETDATE()),
+	(19, 19, 4, 1, GETDATE()),
+	(20, 20, 4, 1, GETDATE()),
+	(21, 21, 4, 1, GETDATE()),
+	(22, 22, 4, 1, GETDATE()),
+	(23, 23, 5, 1, GETDATE()),
+	(24, 24, 5, 1, GETDATE()),
+	(25, 25, 5, 1, GETDATE()),
+	(26, 26, 5, 1, GETDATE()),
+	(27, 27, 5, 1, GETDATE()),
+	(28, 28, 5, 1, GETDATE()),
+	(29, 29, 5, 1, GETDATE()),
+	(30, 30, 2, 1, GETDATE()),
+	(31, 31, 2, 1, GETDATE()),
+	(32, 32, 2, 1, GETDATE()),
+	(33, 33, 2, 1, GETDATE()),
+	(34, 34, 2, 1, GETDATE()),
+	(35, 35, 2, 1, GETDATE()),
+	(36, 36, 2, 1, GETDATE()),
+	(37, 37, 6, 1, GETDATE()),
+	(38, 38, 6, 1, GETDATE()),
+	(49, 39, 6, 1, GETDATE()),
+	(40, 40, 6, 1, GETDATE()),
+	(41, 41, 6, 1, GETDATE()),
+	(42, 42, 6, 1, GETDATE()),
+	(43, 43, 7, 1, GETDATE()),
+	(44, 44, 7, 1, GETDATE()),
+	(45, 45, 7, 1, GETDATE()),
+	(46, 46, 7, 1, GETDATE()),
+	(47, 47, 7, 1, GETDATE()),
+	(48, 48, 7, 1, GETDATE()),
+	(59, 49, 8, 1, GETDATE()),
+	(50, 50, 8, 1, GETDATE()),
+	(51, 51, 8, 1, GETDATE()),
+	(52, 52, 8, 1, GETDATE()),
+	(53, 53, 8, 1, GETDATE()),
+	(54, 54, 8, 1, GETDATE())
+	--(6, 2, 5, 1, GETDATE()),
+	--(7, 2, 6, 1, GETDATE()),
+	--(8, 2, 7, 1, GETDATE()),
+	--(9, 2, 1, 1, GETDATE()),
+	--(0, 2, 1, 1, GETDATE()),
+	--(1, 2, 1, 1, GETDATE()),
+	--(2, 2, 1, 1, GETDATE()),
+	--(3, 2, 1, 1, GETDATE()),
+	--(4, 2, 1, 1, GETDATE()),
+	--(5, 2, 1, 1, GETDATE()),
+	--(6, 2, 1, 1, GETDATE()),
+	--(7, 2, 1, 1, GETDATE()),
+	--(8, 2, 1, 1, GETDATE()),
+	--(9, 2, 1, 1, GETDATE()),
+	--(0, 2, 1, 1, GETDATE()),
+	) AS source ([Id], [FilmContributorId], [InventoryItemId], [CreateUserId], [CreateDate])
+    ON target.Id = source.Id
+WHEN MATCHED 
+THEN 
+    UPDATE SET 
+		target.FilmContributorId = source.FilmContributorId,
+		target.InventoryItemId = source.InventoryItemId,
+		target.CreateUserId = source.CreateUserId,
+		target.CreateDate = source.CreateDate
+WHEN NOT MATCHED BY TARGET 
+THEN
+    INSERT (Id, FilmContributorId, InventoryItemId, CreateUserId, CreateDate)
+    VALUES (source.Id, source.FilmContributorId, Source.InventoryItemId, Source.CreateUserId, Source.CreateDate);
+SET IDENTITY_INSERT [dbo].[InventoryItem_FilmContributor] OFF
+GO
+SET NOCOUNT OFF
+GO
+
+----------------------[[InventoryItem_FormatType]]-------------------------
+SET NOCOUNT ON
+SET IDENTITY_INSERT [dbo].[InventoryItem_FormatType] ON
+MERGE INTO 
+	dbo.InventoryItem_FormatType 
+WITH (HOLDLOCK) AS target
+USING (VALUES
+	(1, 1, 1, 1, GETDATE()),
+	(2, 2, 1, 1, GETDATE()),
+	(3, 3, 1, 1, GETDATE()),
+	(4, 1, 2, 1, GETDATE()),
+	(5, 2, 2, 1, GETDATE()),
+	(6, 3, 2, 1, GETDATE()),
+	(7, 1, 3, 1, GETDATE()),
+	(8, 2, 3, 1, GETDATE()),
+	(9, 3, 3, 1, GETDATE()),
+	(10, 1, 4, 1, GETDATE()),
+	(11, 2, 4, 1, GETDATE()),
+	(12, 3, 4, 1, GETDATE()),
+	(13, 1, 5, 1, GETDATE()),
+	(14, 2, 5, 1, GETDATE()),
+	(15, 3, 5, 1, GETDATE()),
+	(16, 1, 6, 1, GETDATE()),
+	(17, 2, 6, 1, GETDATE()),
+	(18, 3, 6, 1, GETDATE()),
+	(19, 1, 7, 1, GETDATE()),
+	(20, 2, 7, 1, GETDATE()),
+	(21, 3, 7, 1, GETDATE()),
+	(22, 1, 8, 1, GETDATE()),
+	(23, 2, 8, 1, GETDATE()),
+	(24, 3, 8, 1, GETDATE())
+	--(5, 1, 1, 1, GETDATE()),
+	--(6, 1, 1, 1, GETDATE()),
+	--(7, 1, 1, 1, GETDATE()),
+	--(8, 1, 1, 1, GETDATE()),
+	--(9, 1, 1, 1, GETDATE()),
+	--(0, 1, 1, 1, GETDATE()),
+	--(1, 1, 1, 1, GETDATE()),
+	--(2, 1, 1, 1, GETDATE()),
+	--(3, 1, 1, 1, GETDATE()),
+	--(4, 1, 1, 1, GETDATE()),
+	--(5, 1, 1, 1, GETDATE()),
+	--(6, 1, 1, 1, GETDATE()),
+	--(7, 1, 1, 1, GETDATE()),
+	--(8, 1, 1, 1, GETDATE()),
+	--(9, 1, 1, 1, GETDATE()),
+	--(0, 1, 1, 1, GETDATE())
+	) AS source ([Id], [FormatTypeId], [InventoryItemId], [CreateUserId], [CreateDate])
+    ON target.Id = source.Id
+WHEN MATCHED 
+THEN 
+    UPDATE SET 
+		target.FormatTypeId = source.FormatTypeId,
+		target.InventoryItemId = source.InventoryItemId,
+		target.CreateUserId = source.CreateUserId,
+		target.CreateDate = source.CreateDate
+WHEN NOT MATCHED BY TARGET 
+THEN
+    INSERT (Id, FormatTypeId, InventoryItemId, CreateUserId, CreateDate)
+    VALUES (source.Id, source.FormatTypeId, Source.InventoryItemId, Source.CreateUserId, Source.CreateDate);
+SET IDENTITY_INSERT [dbo].[InventoryItem_FormatType] OFF
+GO
+SET NOCOUNT OFF
+GO
+----------------------[[InventoryItem_ItemType]]-------------------------
+SET NOCOUNT ON
+SET IDENTITY_INSERT [dbo].[InventoryItem_ItemType] ON
+MERGE INTO 
+	dbo.InventoryItem_ItemType 
+WITH (HOLDLOCK) AS target
+USING (VALUES
+	(1, 1, 1, 1, GETDATE()),
+	(2, 1, 2, 1, GETDATE()),
+	(3, 1, 3, 1, GETDATE()),
+	(4, 1, 4, 1, GETDATE()),
+	(5, 1, 5, 1, GETDATE()),
+	(6, 1, 6, 1, GETDATE()),
+	(7, 1, 7, 1, GETDATE()),
+	(8, 1, 8, 1, GETDATE()),
+	(9, 2, 9, 1, GETDATE()),
+	(10, 2, 10, 1, GETDATE()),
+	(11, 4, 11, 1, GETDATE()),
+	(12, 3, 12, 1, GETDATE())
+	--(5, 1, 1, 1, GETDATE()),
+	--(6, 1, 1, 1, GETDATE()),
+	--(7, 1, 1, 1, GETDATE()),
+	--(8, 1, 1, 1, GETDATE()),
+	--(9, 1, 1, 1, GETDATE()),
+	--(0, 1, 1, 1, GETDATE()),
+	--(1, 1, 1, 1, GETDATE()),
+	--(2, 1, 1, 1, GETDATE()),
+	--(3, 1, 1, 1, GETDATE()),
+	--(4, 1, 1, 1, GETDATE()),
+	--(5, 1, 1, 1, GETDATE()),
+	--(6, 1, 1, 1, GETDATE()),
+	--(7, 1, 1, 1, GETDATE()),
+	--(8, 1, 1, 1, GETDATE()),
+	--(9, 1, 1, 1, GETDATE()),
+	--(0, 1, 1, 1, GETDATE())
+	) AS source ([Id], [ItemTypeId], [InventoryItemId], [CreateUserId], [CreateDate])
+    ON target.Id = source.Id
+WHEN MATCHED 
+THEN 
+    UPDATE SET 
+		target.ItemTypeId = source.ItemTypeId,
+		target.InventoryItemId = source.InventoryItemId,
+		target.CreateUserId = source.CreateUserId,
+		target.CreateDate = source.CreateDate
+WHEN NOT MATCHED BY TARGET 
+THEN
+    INSERT (Id, ItemTypeId, InventoryItemId, CreateUserId, CreateDate)
+    VALUES (source.Id, source.ItemTypeId, Source.InventoryItemId, Source.CreateUserId, Source.CreateDate);
+SET IDENTITY_INSERT [dbo].[InventoryItem_ItemType] OFF
+GO
+SET NOCOUNT OFF
+GO
+----------------------[[InventoryItem_PurchaseType]]-------------------------
+SET NOCOUNT ON
+SET IDENTITY_INSERT [dbo].[InventoryItem_PurchaseType] ON
+MERGE INTO 
+	dbo.InventoryItem_PurchaseType 
+WITH (HOLDLOCK) AS target
+USING (VALUES
+	(1, 1, 1, 1, GETDATE()),
+	(2, 2, 1, 1, GETDATE()),
+	(3, 1, 2, 1, GETDATE()),
+	(4, 2, 2, 1, GETDATE()),
+	(5, 1, 3, 1, GETDATE()),
+	(6, 2, 3, 1, GETDATE()),
+	(7, 1, 4, 1, GETDATE()),
+	(8, 2, 4, 1, GETDATE()),
+	(9, 1, 5, 1, GETDATE()),
+	(10, 2, 5, 1, GETDATE()),
+	(11, 1, 6, 1, GETDATE()),
+	(12, 2, 6, 1, GETDATE()),
+	(13, 1, 7, 1, GETDATE()),
+	(14, 2, 7, 1, GETDATE()),
+	(15, 1, 8, 1, GETDATE()),
+	(16, 2, 8, 1, GETDATE()),
+	(17, 2, 9, 1, GETDATE()),
+	(18, 2, 10, 1, GETDATE()),
+	(19, 2, 11, 1, GETDATE()),
+	(20, 2, 12, 1, GETDATE())
+	--(1, 1, 1, 1, GETDATE()),
+	--(2, 1, 1, 1, GETDATE()),
+	--(3, 1, 1, 1, GETDATE()),
+	--(4, 1, 1, 1, GETDATE()),
+	--(5, 1, 1, 1, GETDATE()),
+	--(6, 1, 1, 1, GETDATE()),
+	--(7, 1, 1, 1, GETDATE()),
+	--(8, 1, 1, 1, GETDATE()),
+	--(9, 1, 1, 1, GETDATE()),
+	--(0, 1, 1, 1, GETDATE())
+	) AS source ([Id], [PurchaseTypeId], [InventoryItemId], [CreateUserId], [CreateDate])
+    ON target.Id = source.Id
+WHEN MATCHED 
+THEN 
+    UPDATE SET 
+		target.PurchaseTypeId = source.PurchaseTypeId,
+		target.InventoryItemId = source.InventoryItemId,
+		target.CreateUserId = source.CreateUserId,
+		target.CreateDate = source.CreateDate
+WHEN NOT MATCHED BY TARGET 
+THEN
+    INSERT (Id, PurchaseTypeId, InventoryItemId, CreateUserId, CreateDate)
+    VALUES (source.Id, source.PurchaseTypeId, Source.InventoryItemId, Source.CreateUserId, Source.CreateDate);
+SET IDENTITY_INSERT [dbo].[InventoryItem_PurchaseType] OFF
 GO
 SET NOCOUNT OFF
 GO
