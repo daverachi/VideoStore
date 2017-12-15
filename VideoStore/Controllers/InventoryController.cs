@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
+using VideoStore.Common.DataTransferObjects;
 using VideoStore.Core.Interfaces;
 using VideoStore.Core.Models;
 
@@ -15,7 +16,7 @@ namespace VideoStore.Controllers
             _adminService = adminService;
         }
 
-        public IEnumerable<InventoryItem> Get()
+        public IEnumerable<InventoryItemDTO> Get()
         {
             var x = _lookupService.GetInventory();
             return x;

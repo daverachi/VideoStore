@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using VideoStore.Core.Models;
+using VideoStore.Common.DataTransferObjects;
 
 namespace VideoStore.Core.Interfaces
 {
     public interface ILookupService
     {
-        IEnumerable<InventoryItem> GetInventory();
+        IEnumerable<InventoryItemDTO> GetInventory();
     }
 }

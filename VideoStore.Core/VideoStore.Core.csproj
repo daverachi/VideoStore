@@ -51,6 +51,7 @@
     <Compile Include="Interfaces\IInventoryItemRepository.cs" />
     <Compile Include="Interfaces\ILookupService.cs" />
     <Compile Include="Interfaces\IVideoStoreContext.cs" />
+    <Compile Include="Mappings\InventoryItemMapper.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\AddressType.cs" />
     <Compile Include="Models\Customer.cs" />

@@ -7,10 +7,8 @@ namespace VideoStore.Core.Models.ModelMaps
         {
             this.ToTable("InventoryItem");
             this.Property(t => t.ItemName).HasColumnName("ItemName");
-            this.Property(t => t.ItemTypeId).HasColumnName("ItemTypeId");
             this.Property(t => t.Description).HasColumnName("Description");
             this.Property(t => t.Length).HasColumnName("Length");
-            this.Property(t => t.PurchaseTypeId).HasColumnName("PurchaseTypeId");
         }
     }
 }

@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using VideoStore.Common.DataTransferObjects;
 using VideoStore.Core.Interfaces;
+using VideoStore.Core.Mappings;
 using VideoStore.Core.Models;
 
 namespace VideoStore.Core.Services
@@ -75,9 +78,9 @@ namespace VideoStore.Core.Services
             _rentalHistoryRepository = rentalHistoryRepository;
         }
 
-        public IEnumerable<InventoryItem> GetInventory()
+        public IEnumerable<InventoryItemDTO> GetInventory()
         {
-            return _inventoryItemRepository.Get();
+            return _inventoryItemRepository.Get().Select(x=> InventoryItemMapper.ToDTO(x));
         }
     }
 }
